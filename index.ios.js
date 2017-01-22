@@ -6,7 +6,10 @@
 
 import React, { Component } from 'react';
 import {
-  AppRegistry
+  AppRegistry,
+  StyleSheet,
+  View,
+  Platform
 } from 'react-native';
 
 import Main from './app/main/Main'
@@ -14,9 +17,19 @@ import Main from './app/main/Main'
 export default class GoShopping extends Component {
     render() {
         return (
-            <Main/>
+            <View style={styles.container}>
+                <Main/>
+            </View>
         );
     }
 }
+
+const styles = StyleSheet.create({
+    container: {
+        marginTop:Platform.OS==='ios'? 20: 0,
+        flex: 1,
+        backgroundColor: "#FFFFFF",
+    }
+});
 
 AppRegistry.registerComponent('GoShopping', () => GoShopping);
