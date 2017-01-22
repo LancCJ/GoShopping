@@ -6,30 +6,9 @@
 
 import React, { Component } from 'react';
 import {
-  AppRegistry,
-  StyleSheet,
-  View,
-  Platform
+  AppRegistry
 } from 'react-native';
 
-import Main from './app/main/Main'
+import Root from './app/Root'
 
-export default class GoShopping extends Component {
-    render() {
-        return (
-            <View style={styles.container}>
-                <Main/>
-            </View>
-        );
-    }
-}
-
-const styles = StyleSheet.create({
-    container: {
-        marginTop:Platform.OS==='ios'? 20: 0,
-        flex: 1,
-        backgroundColor: "#FFFFFF",
-    }
-});
-
-AppRegistry.registerComponent('GoShopping', () => GoShopping);
+AppRegistry.registerComponent('GoShopping', () => Root);

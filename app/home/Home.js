@@ -70,10 +70,14 @@ export default class Home extends Component {
                 {/**右边**/}
                 <View style={styles.topIconStyles}>
                     <TouchableOpacity onPress={this._onPressNotificationButton}>
-                        <Icon type='ionicon' color={'#FFFFFF'} name='ios-notifications-outline' size={30} />
+                        <View>
+                            <Icon type='ionicon' color={'#FFFFFF'} name='ios-notifications-outline' size={30} />
+                        </View>
                     </TouchableOpacity>
                     <TouchableOpacity onPress={this._onPressScanButton}>
-                        <Icon type='ionicon' color={'#FFFFFF'} name='ios-qr-scanner' size={30} />
+                        <View>
+                            <Icon type='ionicon' color={'#FFFFFF'} name='ios-qr-scanner' size={30} />
+                        </View>
                     </TouchableOpacity>
                 </View>
             </View>
@@ -119,6 +123,6 @@ const styles = StyleSheet.create({
         height:64,
         flexDirection:'row',
         alignItems:'center',
-        justifyContent:'space-around'
+        justifyContent:'space-between'
     }
 });

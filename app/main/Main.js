@@ -32,7 +32,7 @@ export default class Main extends Component {
         const { selectedTab } = this.state
         return (
             <Tab
-                titleStyle={{fontWeight: 'bold', fontSize: 10,color:'#FA5600'}}
+                titleStyle={{fontWeight: 'bold', fontSize: 10}}
                 selectedTitleStyle={{marginTop: -1, marginBottom: 6}}
                 selected={selectedTab === id}
                 title={selectedTab === id ? title : null}
