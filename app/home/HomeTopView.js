@@ -16,7 +16,10 @@ import {
 var Dimensions = require('Dimensions')
 var {width,height}=Dimensions.get('window')
 
-var colorArr=['red','green']
+import HomeTopListView from './HomeTopListView'
+
+var TopMenu=require('../../LocalData/TopMenu.json')
+var colorArr=TopMenu.data
 /**
  *首页顶部 左右滑动视图
  */
@@ -31,9 +34,9 @@ export default class HomeTopView extends Component {
         var itemArr=[]
         for (var i=0;i<colorArr.length;i++){
             itemArr.push(
-                <View key={i} style={{width:width,height:height*0.25,backgroundColor:colorArr[i]}}>
-                    <Text>{i}</Text>
-                </View>
+                <HomeTopListView key={i}
+                    dataArr={colorArr[i]}
+                />
             )
         }
         return itemArr
