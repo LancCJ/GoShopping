@@ -125,10 +125,11 @@ const styles = StyleSheet.create({
     },
     topInputStyle:{
         width:width*0.6,
-        height:height*0.05,
+        height:height*0.07,
         backgroundColor: "#FFFFFF",
         borderRadius:width*0.7/20,
-        paddingLeft:width*0.02
+        paddingLeft:width*0.02,
+        fontSize:15
     },
     topIconStyles:{
         height:height*0.05,
