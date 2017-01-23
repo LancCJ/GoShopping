@@ -64,6 +64,7 @@ export default class Home extends Component {
                     <TextInput
                         placeholder="输入商家,品类,商圈"
                         placeholderTextColor="#DEDEDE"
+                        underlineColorAndroid='transparent'
                         style={styles.topInputStyle}
                     />
                 </View>
@@ -99,7 +100,7 @@ export default class Home extends Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: "#FFFFFF"
+        backgroundColor: "#EDEDF3"
     },
     navBarStyle:{
         height:64,

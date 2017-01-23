@@ -27,6 +27,6 @@ export default class Shop extends Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: "#FFFFFF"
+        backgroundColor: "#EDEDF3"
     }
 });
