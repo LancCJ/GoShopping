@@ -19,6 +19,7 @@ import {
 import {Icon} from 'react-native-elements'
 
 import Test from '../Test'
+import HomeTopView from './HomeTopView'
 
 var Dimensions = require('Dimensions')
 var {width,height}=Dimensions.get('window')
@@ -89,17 +90,9 @@ export default class Home extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <ScrollView
-                    contentInset={{top:-height*0.08*4}}
-                    contentOffset={{y:height*0.08*4}}
-                >
-                    <View style={styles.TopViewStyle}>
-                    {this.renderNavBar()}
-                    </View>
-                    <Text
-                        style={[{color:"red"}]}
-                        onPress={this._pressButton.bind(this)}
-                    >Home界面</Text>
+                {this.renderNavBar()}
+                <ScrollView>
+                    <HomeTopView/>
                 </ScrollView>
             </View>
         );
@@ -117,7 +110,6 @@ const styles = StyleSheet.create({
         flexDirection:'row',
         alignItems:'center',
         justifyContent:'space-around',
-        marginTop:Platform.OS==='ios'?height*0.08*4:0
     },
     topTextStyles:{
         fontSize:15,
@@ -136,9 +128,5 @@ const styles = StyleSheet.create({
         flexDirection:'row',
         alignItems:'center',
         justifyContent:'space-between'
-    },
-    TopViewStyle:{
-        height:Platform.OS==='ios'?height*0.08*5:height*0.08,
-        backgroundColor: "#FA5600"
     }
 });
