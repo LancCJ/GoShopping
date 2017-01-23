@@ -11,7 +11,8 @@ import {
     ListView,
     Alert,
     TouchableOpacity,
-    ScrollView
+    ScrollView,
+    Platform
 } from 'react-native';
 
 import {Icon} from 'react-native-elements'
@@ -54,8 +55,13 @@ export default class More extends Component {
     render() {
         return (
             <View style={styles.container}>
-                {this.renderNavBar()}
-                <ScrollView>
+                <ScrollView
+                    contentInset={{top:-height*0.08*4}}
+                    contentOffset={{y:height*0.08*4}}
+                >
+                    <View style={styles.TopViewStyle}>
+                    {this.renderNavBar()}
+                    </View>
                     <View style={[{marginTop:height*0.02}]}>
                         <CommonCell id='sacn'     name='扫一扫' type="button"/>
                     </View>
@@ -89,20 +95,25 @@ const styles = StyleSheet.create({
         backgroundColor: "#F0EBF3"
     },
     navBarStyle:{
-        height:44,
+        height:height*0.08,
         backgroundColor:'#FA5600',
         flexDirection:'row',
         alignItems:'center',
-        justifyContent:'space-between'
+        justifyContent:'space-between',
+        marginTop:Platform.OS==='ios'?height*0.08*4:0
     },
     topTextStyles:{
         fontSize:20,
         color:'#FFFFFF'
     },
     topIconStyles:{
-        height:44,
+        height:height*0.08,
         flexDirection:'row',
         alignItems:'center',
         justifyContent:'space-between'
+    },
+    TopViewStyle:{
+        height:Platform.OS==='ios'?height*0.08*5:height*0.08,
+        backgroundColor: "#FA5600"
     }
 });

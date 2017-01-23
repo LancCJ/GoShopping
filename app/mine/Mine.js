@@ -10,7 +10,8 @@ import {
     Image,
     ListView,
     Alert,
-    ScrollView
+    ScrollView,
+    Platform
 } from 'react-native';
 
 import {Icon} from 'react-native-elements'
@@ -63,9 +64,14 @@ export default class Mine extends Component {
     render() {
         return (
             <View style={styles.container}>
-                {this.renderTopUpView()}
-                {this.renderTopDownView()}
-                <ScrollView>
+                <ScrollView
+                    contentInset={{top:-height*0.16*2}}
+                    contentOffset={{y:height*0.16*2}}
+                >
+                    <View style={styles.TopViewStyle}>
+                        {this.renderTopUpView()}
+                        {this.renderTopDownView()}
+                    </View>
                     <View style={[{marginTop:height*0}]}>
                         <CommonCell id='orders'  name='我的订单' type="textButton" text="查看全部订单" iconName="collect" iconType="local" />
                         <CommonRow/>
@@ -101,15 +107,16 @@ const styles = StyleSheet.create({
     TopUpViewStyle: {
         width: width,
         backgroundColor: "#FA5600",
-        height:64,
+        height:height*0.1,
         flexDirection:'row',
         justifyContent:'space-between',
-        alignItems:'center'
+        alignItems:'center',
+        marginTop:Platform.OS==='ios'?height*0.16*2:0
     },
     TopDownViewStyle: {
         width: width,
         backgroundColor: "#F4765B",
-        height:45,
+        height:height*0.06,
         flexDirection:'row',
         justifyContent:'space-between',
         alignItems:'center',
@@ -123,5 +130,9 @@ const styles = StyleSheet.create({
     },
     TopDownTextStyle:{
         color:'#FFFFFF'
+    },
+    TopViewStyle:{
+        height:Platform.OS==='ios'?height*0.16*3:height*0.16,
+        backgroundColor: "#FA5600"
     }
 });

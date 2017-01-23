@@ -11,7 +11,9 @@ import {
     Image,
     ListView,
     Alert,
-    TouchableOpacity
+    TouchableOpacity,
+    Platform,
+    ScrollView
 } from 'react-native';
 
 import {Icon} from 'react-native-elements'
@@ -87,11 +89,18 @@ export default class Home extends Component {
     render() {
         return (
             <View style={styles.container}>
-                {this.renderNavBar()}
-                <Text
-                    style={[{color:"red"}]}
-                    onPress={this._pressButton.bind(this)}
-                >Home界面</Text>
+                <ScrollView
+                    contentInset={{top:-height*0.08*4}}
+                    contentOffset={{y:height*0.08*4}}
+                >
+                    <View style={styles.TopViewStyle}>
+                    {this.renderNavBar()}
+                    </View>
+                    <Text
+                        style={[{color:"red"}]}
+                        onPress={this._pressButton.bind(this)}
+                    >Home界面</Text>
+                </ScrollView>
             </View>
         );
     }
@@ -103,11 +112,12 @@ const styles = StyleSheet.create({
         backgroundColor: "#EDEDF3"
     },
     navBarStyle:{
-        height:44,
+        height:height*0.08,
         backgroundColor:'#FA5600',
         flexDirection:'row',
         alignItems:'center',
-        justifyContent:'space-around'
+        justifyContent:'space-around',
+        marginTop:Platform.OS==='ios'?height*0.08*4:0
     },
     topTextStyles:{
         fontSize:15,
@@ -115,15 +125,19 @@ const styles = StyleSheet.create({
     },
     topInputStyle:{
         width:width*0.6,
-        height:24,
+        height:height*0.05,
         backgroundColor: "#FFFFFF",
         borderRadius:width*0.7/20,
         paddingLeft:width*0.02
     },
     topIconStyles:{
-        height:44,
+        height:height*0.05,
         flexDirection:'row',
         alignItems:'center',
         justifyContent:'space-between'
+    },
+    TopViewStyle:{
+        height:Platform.OS==='ios'?height*0.08*5:height*0.08,
+        backgroundColor: "#FA5600"
     }
 });
