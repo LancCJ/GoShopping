@@ -54,7 +54,7 @@ export default class Home extends Component {
         return (
             <View style={styles.navBarStyle}>
                 {/**左边**/}
-                <View>
+                <View style={[{paddingLeft:width*0.01}]}>
                     <TouchableOpacity onPress={this._onPressLocationButton}>
                         <Text style={styles.topTextStyles}>苏州</Text>
                     </TouchableOpacity>
@@ -69,15 +69,15 @@ export default class Home extends Component {
                     />
                 </View>
                 {/**右边**/}
-                <View style={styles.topIconStyles}>
+                <View style={[styles.topIconStyles,{paddingRight:width*0.01}]}>
                     <TouchableOpacity onPress={this._onPressNotificationButton}>
-                        <View>
-                            <Icon type='ionicon' color={'#FFFFFF'} name='ios-notifications-outline' size={30} />
+                        <View style={[{paddingRight:width*0.04}]}>
+                            <Icon type='ionicon' color={'#FFFFFF'} name='ios-notifications-outline' size={25} />
                         </View>
                     </TouchableOpacity>
                     <TouchableOpacity onPress={this._onPressScanButton}>
                         <View>
-                            <Icon type='ionicon' color={'#FFFFFF'} name='ios-qr-scanner' size={30} />
+                            <Icon type='ionicon' color={'#FFFFFF'} name='ios-qr-scanner' size={25} />
                         </View>
                     </TouchableOpacity>
                 </View>
@@ -103,25 +103,25 @@ const styles = StyleSheet.create({
         backgroundColor: "#EDEDF3"
     },
     navBarStyle:{
-        height:64,
+        height:44,
         backgroundColor:'#FA5600',
         flexDirection:'row',
         alignItems:'center',
         justifyContent:'space-around'
     },
     topTextStyles:{
-        fontSize:20,
+        fontSize:15,
         color:'#FFFFFF',
     },
     topInputStyle:{
-        width:width*0.7,
-        height:44,
+        width:width*0.6,
+        height:24,
         backgroundColor: "#FFFFFF",
-        borderRadius:width*0.7/15,
-        paddingLeft:width*0.01
+        borderRadius:width*0.7/20,
+        paddingLeft:width*0.02
     },
     topIconStyles:{
-        height:64,
+        height:44,
         flexDirection:'row',
         alignItems:'center',
         justifyContent:'space-between'
