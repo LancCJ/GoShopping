@@ -20,6 +20,9 @@ import {Icon} from 'react-native-elements'
 
 import Test from '../Test'
 import HomeTopView from './HomeTopView'
+import CommonView1 from '../compos/CommonView1'
+import CommonView2 from '../compos/CommonView2'
+
 
 var Dimensions = require('Dimensions')
 var {width,height}=Dimensions.get('window')
@@ -93,6 +96,8 @@ export default class Home extends Component {
                 {this.renderNavBar()}
                 <ScrollView>
                     <HomeTopView/>
+                    <CommonView1/>
+                    <CommonView2/>
                 </ScrollView>
             </View>
         );
