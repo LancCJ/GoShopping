@@ -21,13 +21,13 @@ var {width,height}=Dimensions.get('window')
 export default class CommonItem1 extends Component {
     render() {
         return (
-            <View style={[styles.container,{width:this.props.width,paddingLeft:width*0.04}]}>
-                <View>
-                    <Text style={{color:this.props.mainTitleColor,fontSize:height*0.02}}>{this.props.mainTitle}</Text>
+            <View style={[styles.container,{width:this.props.width}]}>
+                <View style={{marginLeft:width*0.04}}>
+                    <Text style={{color:this.props.mainTitleColor,fontSize:this.props.fontSize?this.props.fontSize:height*0.02}}>{this.props.mainTitle}</Text>
                     <Text style={{color:'#5E6977',fontSize:height*0.015}}>{this.props.subTitle}</Text>
                 </View>
-                <View>
-                    <Image source={{uri:this.props.iconName}} style={{resizeMode:'contain',width:width*0.25,height:height*0.1,paddingRight:width*0.04}}/>
+                <View style={{marginRight:width*0.04}}>
+                    <Image source={{uri:this.props.iconName}} style={{resizeMode:'contain',width:width*0.25,height:height*0.1}}/>
                 </View>
             </View>
         );

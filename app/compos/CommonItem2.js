@@ -24,9 +24,9 @@ export default class CommonItem2 extends Component {
             <View style={styles.container}>
                 <Image source={{uri:this.props.iconName1}} style={{resizeMode:'contain',width:width*0.36,height:height*0.1*2/4}}/>
                 <Image source={{uri:this.props.iconName2}} style={{resizeMode:'contain',width:width*0.36,height:height*0.1*2/4}}/>
-                <Text>{this.props.title1}</Text>
+                <Text style={{color:'#5E6977'}}>{this.props.title1}</Text>
                 <View style={{flexDirection:'row'}}>
-                    <Text>{this.props.title2}</Text>
+                    <Text style={{color:'#5E6977'}}>{this.props.title2}</Text>
                     <Text style={{backgroundColor:'yellow',color:'red'}}>{this.props.title3}</Text>
                 </View>
             </View>
