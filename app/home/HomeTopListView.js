@@ -11,7 +11,8 @@ import {
     Image,
     ListView,
     Alert,
-    ScrollView
+    ScrollView,
+    TouchableOpacity
 } from 'react-native';
 
 var Dimensions = require('Dimensions')
@@ -31,10 +32,12 @@ export default class HomeTopListView extends Component {
     }
     renderRow(rowData){
         return (
-            <View>
-                <Image source={{uri:rowData.image}} style={styles.topListViewImageStyle}/>
-                <Text>{rowData.title}</Text>
-            </View>
+            <TouchableOpacity onPress={()=>{Alert.alert('点击条目')}}>
+                <View style={styles.cellStyle}>
+                    <Image source={{uri:rowData.image}} style={styles.topListViewImageStyle}/>
+                    <Text style={{fontSize:width*0.03,color:'#5E6977'}}>{rowData.title}</Text>
+                </View>
+            </TouchableOpacity>
         )
     }
     render() {
@@ -63,13 +66,24 @@ const styles = StyleSheet.create({
         fontSize:20
     },
     topListViewImageStyle:{
-        height:width*0.1,
-        width:width*0.1
+        height:width*0.15,
+        width:width*0.15
     },
     contentViewStyle:{
         width:width,
         flexWrap:'wrap',
-        flexDirection:'row'
+        flexDirection:'row',
+        justifyContent:'center',
+        alignItems:'center'
+    },
+    cellStyle:{
+        //backgroundColor:'red',
+        width:width*0.2,
+        height:width*0.2,
+        justifyContent:'center',
+        alignItems:'center',
+        marginTop:width*0.02,
+        marginLeft:(width-width*0.2*5)/6
     }
 
 });
