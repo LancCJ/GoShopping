@@ -9,7 +9,8 @@ import {
     View,
     Image,
     ListView,
-    Alert
+    Alert,
+    TouchableOpacity
 } from 'react-native';
 
 var Dimensions = require('Dimensions')
@@ -19,17 +20,23 @@ var {width,height}=Dimensions.get('window')
  *
  */
 export default class CommonItem1 extends Component {
+    clickCell(data){
+        if(this.props.callBackClickCell==null)return
+        this.props.callBackClickCell(data)
+    }
     render() {
         return (
-            <View style={[styles.container,{width:this.props.width}]}>
-                <View style={{marginLeft:width*0.04}}>
-                    <Text style={{color:this.props.mainTitleColor,fontSize:this.props.fontSize?this.props.fontSize:height*0.02}}>{this.props.mainTitle}</Text>
-                    <Text style={{color:'#5E6977',fontSize:height*0.015}}>{this.props.subTitle}</Text>
+            <TouchableOpacity onPress={()=>{this.clickCell(this.props.mainTitle)}}>
+                <View style={[styles.container,{width:this.props.width}]}>
+                    <View style={{marginLeft:width*0.04}}>
+                        <Text style={{color:this.props.mainTitleColor,fontSize:this.props.fontSize?this.props.fontSize:height*0.02}}>{this.props.mainTitle}</Text>
+                        <Text style={{color:'#5E6977',fontSize:height*0.015}}>{this.props.subTitle}</Text>
+                    </View>
+                    <View style={{marginRight:width*0.04}}>
+                        <Image source={{uri:this.props.iconName}} style={{resizeMode:'contain',width:width*0.25,height:height*0.1}}/>
+                    </View>
                 </View>
-                <View style={{marginRight:width*0.04}}>
-                    <Image source={{uri:this.props.iconName}} style={{resizeMode:'contain',width:width*0.25,height:height*0.1}}/>
-                </View>
-            </View>
+            </TouchableOpacity>
         );
     }
 }

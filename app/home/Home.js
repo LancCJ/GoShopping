@@ -96,7 +96,9 @@ export default class Home extends Component {
                 {this.renderNavBar()}
                 <ScrollView>
                     <HomeTopView/>
-                    <CommonView1/>
+                    <CommonView1
+                        popTopHome={(data)=>Alert.alert(data)}
+                    />
                     <CommonView2/>
                 </ScrollView>
             </View>

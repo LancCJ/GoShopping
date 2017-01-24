@@ -34,6 +34,9 @@ export default class CommonView1 extends Component {
             </TouchableOpacity>
         )
     }
+    popTopView(data){
+        this.props.popTopHome(data)
+    }
     renderRightView(){
         var itemArr=[]
         var rightData=TopMiddletDate.dataRight
@@ -42,7 +45,14 @@ export default class CommonView1 extends Component {
             itemArr.push(
                 <TouchableOpacity key={i} onPress={()=>{Alert.alert('点击了')}}>
                     <View  style={{borderBottomWidth:i===0?0.5:0,borderBottomColor:i===0?'#DEDEDE':null}}>
-                        <CommonItem1  width={width/2} mainTitle={data.title} subTitle={data.subTitle} mainTitleColor={data.titleColor} iconName={data.rightImage}/>
+                        <CommonItem1
+                            width={width/2}
+                            mainTitle={data.title}
+                            subTitle={data.subTitle}
+                            mainTitleColor={data.titleColor}
+                            iconName={data.rightImage}
+                            callBackClickCell={(data)=>this.popTopView(data)}
+                        />
                     </View>
                 </TouchableOpacity>
             )
