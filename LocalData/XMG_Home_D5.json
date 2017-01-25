@@ -49,7 +49,52 @@
     {
       "detailurl": "imeituan://www.meituan.com/web/?url=http://i.meituan.com/shoppingmall/smDetail/41692498",
       "promotionIcon": "",
-      "name": "来又来广场",
+      "name": "来又来广场1",
+      "img": "http://p0.meituan.net/codeman/d675f4ad9b7ece9f0593db298beb082d31800.jpg",
+      "showtext": {
+        "text": "48家优惠",
+        "count": 48,
+        "color": ""
+      },
+      "longitude": 113.232008,
+      "latitude": 23.397758,
+      "smid": 41692498,
+      "promotionText": "48家品牌优惠中：瑞可爷爷的店每满30减5，全单9折（买单立享）"
+    },
+    {
+      "detailurl": "imeituan://www.meituan.com/web/?url=http://i.meituan.com/shoppingmall/smDetail/41692498",
+      "promotionIcon": "",
+      "name": "来又来广场2",
+      "img": "http://p0.meituan.net/codeman/d675f4ad9b7ece9f0593db298beb082d31800.jpg",
+      "showtext": {
+        "text": "48家优惠",
+        "count": 48,
+        "color": ""
+      },
+      "longitude": 113.232008,
+      "latitude": 23.397758,
+      "smid": 41692498,
+      "promotionText": "48家品牌优惠中：瑞可爷爷的店每满30减5，全单9折（买单立享）"
+    },
+    {
+      "detailurl": "imeituan://www.meituan.com/web/?url=http://i.meituan.com/shoppingmall/smDetail/41692498",
+      "promotionIcon": "",
+      "name": "来又来广场3",
+      "img": "http://p0.meituan.net/codeman/d675f4ad9b7ece9f0593db298beb082d31800.jpg",
+      "showtext": {
+        "text": "48家优惠",
+        "count": 48,
+        "color": ""
+      },
+      "longitude": 113.232008,
+      "latitude": 23.397758,
+      "smid": 41692498,
+      "promotionText": "48家品牌优惠中：瑞可爷爷的店每满30减5，全单9折（买单立享）"
+    },
+    {
+      "detailurl": "imeituan://www.meituan.com/web/?url=http://i.meituan.com/shoppingmall/smDetail/41692498",
+      "promotionIcon": "",
+      "name": "来又来广场4",
       "img": "http://p0.meituan.net/codeman/d675f4ad9b7ece9f0593db298beb082d31800.jpg",
       "showtext": {
         "text": "48家优惠",
@@ -62,6 +107,6 @@
       "promotionText": "48家品牌优惠中：瑞可爷爷的店每满30减5，全单9折（买单立享）"
     }
   ],
-  "tips": "全部4家",
+  "tips": "全部7家",
   "jumpto": "imeituan://www.meituan.com/web/?url=http://i.meituan.com/shoppingmall/smList?sid=@geodist:asc"
 }
