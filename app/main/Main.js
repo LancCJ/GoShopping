@@ -5,10 +5,15 @@ import React, {Component} from 'react';
 import {
     StyleSheet,
     View,
-    Navigator
+    Navigator,
+    Image
 } from 'react-native';
 
 import { Tabs, Tab, Icon } from 'react-native-elements'
+
+
+var Dimensions = require('Dimensions')
+var {width,height}=Dimensions.get('window')
 
 import Home from '../home/Home'
 import Shop from '../shop/Shop'
@@ -28,16 +33,16 @@ export default class Main extends Component {
     changeTab (selectedTab) {
         this.setState({selectedTab})
     }
-    renderTab(id,title,iconType,iconName,compo){
+    renderTab(id,title,iconNameUnSelected,iconNameSelected,compo){
         const { selectedTab } = this.state
         return (
             <Tab
-                titleStyle={{fontWeight: 'bold', fontSize: 10}}
-                selectedTitleStyle={{marginTop: -1, marginBottom: 6}}
+                titleStyle={{fontWeight: 'bold', fontSize: width*0.035,color:'#FFFFFF'}}
+                selectedTitleStyle={{marginTop: -1, marginBottom: 6,fontWeight: 'bold', fontSize: width*0.035,color:'#ED6000'}}
                 selected={selectedTab === id}
                 title={selectedTab === id ? title : null}
-                renderIcon={() => <Icon type={iconType} containerStyle={{justifyContent: 'center', alignItems: 'center', marginTop: 12}} color={'#5e6977'} name={iconName} size={33} />}
-                renderSelectedIcon={() => <Icon type={iconType} color={'#FA5600'} name={iconName} size={30} />}
+                renderIcon={() => <Image source={{uri:iconNameUnSelected}} style={{width:width/10,height:width/10,resizeMode:'contain'}} />}
+                renderSelectedIcon={() => <Image source={{uri:iconNameSelected}} style={{width:width/10,height:width/10,resizeMode:'contain'}} />}
                 onPress={() => this.changeTab(id)}>
                 <Navigator
                     initialRoute={{ name: title, component: compo }}
@@ -65,10 +70,10 @@ export default class Main extends Component {
         return (
             <View style={styles.container}>
                 <Tabs>
-                    {this.renderTab('home','首页','','home',Home)}
-                    {this.renderTab('shop','商家','','shop',Shop)}
-                    {this.renderTab('more','更多','ionicon','ios-more',More)}
-                    {this.renderTab('mine','我'  ,'','person',Mine)}
+                    {this.renderTab('home','首页','icon_tabbar_homepage','icon_tabbar_homepage_selected',Home)}
+                    {this.renderTab('shop','商家','icon_tabbar_merchant_normal','icon_tabbar_merchant_selected',Shop)}
+                    {this.renderTab('more','更多','icon_tabbar_misc','icon_tabbar_misc_selected',More)}
+                    {this.renderTab('mine','我'  ,'icon_tabbar_mine','icon_tabbar_mine_selected',Mine)}
                 </Tabs>
             </View>
         );
