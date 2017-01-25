@@ -6,7 +6,8 @@ import {
     StyleSheet,
     View,
     Navigator,
-    Image
+    Image,
+    StatusBar
 } from 'react-native';
 
 import { Tabs, Tab, Icon } from 'react-native-elements'
@@ -41,8 +42,8 @@ export default class Main extends Component {
                 selectedTitleStyle={{marginTop: -1, marginBottom: 6,fontWeight: 'bold', fontSize: width*0.035,color:'#ED6000'}}
                 selected={selectedTab === id}
                 title={selectedTab === id ? title : null}
-                renderIcon={() => <Image source={{uri:iconNameUnSelected}} style={{width:width/10,height:width/10,resizeMode:'contain'}} />}
-                renderSelectedIcon={() => <Image source={{uri:iconNameSelected}} style={{width:width/10,height:width/10,resizeMode:'contain'}} />}
+                renderIcon={() => <Image source={{uri:iconNameUnSelected}} style={{width:width/15,height:width/15,resizeMode:'contain'}} />}
+                renderSelectedIcon={() => <Image source={{uri:iconNameSelected}} style={{width:width/15,height:width/15,resizeMode:'contain'}} />}
                 onPress={() => this.changeTab(id)}>
                 <Navigator
                     initialRoute={{ name: title, component: compo }}

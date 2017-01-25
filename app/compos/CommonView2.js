@@ -28,6 +28,8 @@ export default class CommonView2 extends Component {
         var downData=home_d4.data
         for(i=0;i<downData.length;i++){
             var data=downData[i]
+            //console.log("i="+i+","+data.maintitle)
+
             itemArr.push(
                 <CommonItem1 key={i} width={width/2} mainTitle={data.maintitle} subTitle={data.title} mainTitleColor={data.typeface_color} iconName={this.dealWidthUrl(data.imageurl)}/>
             )
@@ -51,7 +53,7 @@ export default class CommonView2 extends Component {
                 <View>
                     <CommonItem1 fontSize={height*0.04} width={width} mainTitle="最高立减25" subTitle="快速立减减减" mainTitleColor="#F6B144" iconName="nsj"/>
                 </View>
-                <View style={{flexWrap:'wrap',flexDirection:'row'}}>
+                <View style={{flexWrap:'wrap',flexDirection:'row',height:height*0.08}}>
                     {this.renderDownView()}
                 </View>
             </View>

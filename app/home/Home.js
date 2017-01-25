@@ -18,7 +18,7 @@ import {
 
 import {Icon} from 'react-native-elements'
 
-import Test from '../Test'
+import Test from '../StatusBarDemo'
 import HomeTopView from './HomeTopView'
 import CommonView1 from '../compos/CommonView1'
 import CommonView2 from '../compos/CommonView2'
